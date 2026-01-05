@@ -1,0 +1,33 @@
+doctype html
+
+include ../components
+
+block variables
+
+html(lang="ru")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content="ProjectName — описание")
+    if (openGraf)
+      meta(property="og:title", content="ProjectName")
+      meta(property="og:image", content="")
+      meta(property="og:type", content="website")
+      meta(property="og:url", content="")
+      meta(property="og:description", content="ProjectName — описание")
+
+    link(rel="stylesheet", href="css/style.min.css")
+
+  body
+    .wrapper(class=wrapperMods)
+      if (hasHeader)
+        +header(headerMods, currentUrl)
+
+      block main
+
+      if (hasFooter)
+        +footer(footerMods)
+
+    block modals

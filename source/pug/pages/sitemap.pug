@@ -1,0 +1,18 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Список страниц"
+  - const hasHeader = false
+  - const hasFooter = false
+
+block main
+  main
+    .sitemap
+      .sitemap__container
+        h1.sitemap__title Список страниц проекта
+        ul.sitemap__list
+          li.sitemap__item
+            a.sitemap__link(href="index.html") 
+              | Главная страница
+              small index.html
+

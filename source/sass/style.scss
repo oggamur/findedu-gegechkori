@@ -1,0 +1,14 @@
+@import "vendor/normalize";
+
+@import "variables";
+@import "mixins";
+@import "functions";
+@import "global/fonts";
+@import "global/reboot";
+@import "global/utils";
+
+@import "blocks/header";
+@import "blocks/main-nav";
+@import "blocks/footer";
+@import "blocks/btn";
+@import "blocks/sitemap";
