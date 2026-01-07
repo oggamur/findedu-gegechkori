@@ -1,0 +1,141 @@
+.hero {
+  background-color: #FAFAFA;
+  padding-top: 100px;
+  &__container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__left-side{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__right-side{
+    align-self: flex-start;
+    margin-top: -170px;
+    margin-left: 60px;
+  }
+
+  &__title{
+    margin-bottom: 20px;
+    color: #181515;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  &__subtitle{
+  margin-bottom: 40px;
+  color: #9E9E9E;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 143%;
+  }
+
+  &__compare-btn{
+    padding: 14px 46px 14px 60px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    background: #486DD8;
+    width: fit-content;
+    transition: border-radius $trans-default, box-shadow $trans-default;
+
+    &_text-wrapper{
+      margin-right: 25px;
+    }
+
+    @include hover-focus {
+      box-shadow: 0 20px 40px -10px rgba(72, 109, 216, 0.60);
+    }
+  }
+
+  &__compare-btn_text{
+    display: block;
+    color: #FAFAFA;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__stats-block{
+    position: relative;
+    top: -90px;
+    right: -58px;
+    display: inline-flex;
+    flex-direction: row;
+    padding: 25px 20px 10px 20px;
+    border-radius: 19px;
+    border-radius: 19px;
+    border: 0.7px solid #E3E3E3;
+    background: #F8F7FC;
+    width: fit-content;
+    filter: drop-shadow(0 2.633px 36.924px rgba(0, 0, 0, 0.06));
+  }
+
+  &__stats-block-left{
+    display: flex;
+    flex-direction: column;
+
+    .left-stats-title{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 5px;
+
+    }
+
+    .stats-title{
+      margin: 0 21px 0 0;
+      color: #000;
+      font-family: $ff-gilroy;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    .stats-subtitle{
+      margin: 0 0 21px 0;
+      color: #6F6E6E;
+      font-family: $ff-gilroy;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    .stats-display{
+      margin: 0 0 0 -20px;
+    }
+  }
+
+  &__stats-block-right{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 -50px;
+
+    .stats-title-sellary{
+      margin: 0;
+
+      color: #000;
+      font-family: $ff-gilroy;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .stats-subtitle-companies{
+      justify-self: flex-end;
+      margin: 0;
+      color: rgba(0, 0, 0, 0.45);
+      font-family: Gilroy;
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+}
+

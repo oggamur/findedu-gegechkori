@@ -52,3 +52,63 @@
     url("../fonts/inter-v11-latin_cyrillic-800.woff2") format("woff2"),
     url("../fonts/inter-v11-latin_cyrillic-800.woff") format("woff");
 }
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Gilroy";
+
+  font-display: swap;
+  src:
+    url("../fonts/Gilroy-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Gilroy";
+
+  font-display: swap;
+  src:
+    url("../fonts/Gilroy-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Gilroy";
+
+  font-display: swap;
+  src:
+    url("../fonts/Gilroy-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Gilroy";
+
+  font-display: swap;
+  src:
+    url("../fonts/Gilroy-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Gilroy";
+
+  font-display: swap;
+  src:
+    url("../fonts/Gilroy-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Gilroy";
+
+  font-display: swap;
+  src:
+    url("../fonts/Gilroy-Black.woff") format("woff");
+}

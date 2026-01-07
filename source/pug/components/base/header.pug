@@ -66,13 +66,13 @@ mixin header(headerMods, currentUrl)
               - const activeStateBottom = currentUrl === link.href
               li.header__nav-bottom-item
                 if(activeStateBottom)
-                  span.header__nav-bottom-link.is-active
-                  img(src="img/icons/Polygon 3.svg", alt="")
+                  span.header__nav-bottom-link.is-active= link.text
+                  img(src="img/icons/polygon_grey.svg", alt="")
                   span.separator
                 else
-                  a.header__nav-bottom-link(href=link.href)= link.text
-                  span.header__nav-bottom-link
-                  img(src="img/icons/Polygon 3.svg", alt="")
+                  a.header__nav-bottom-link(href=link.href)
+                    span.header__nav-bottom-link-text= link.text
+                    img(src="img/icons/Polygon 3.svg", alt="")
                   span.header__nav-bottom-separator
 
 
