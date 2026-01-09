@@ -1,0 +1,146 @@
+mixin directions(directionsMods)
+  -
+    const directionsList = [
+      {
+        title: "Дизайн",
+        icon: "Gallery.svg",
+        isActive: true,
+        topics: [
+          "Web-дизайн",
+          "Дизайн интерьеров",
+          "3D-моделирование",
+          "Motion-дизайн",
+          "Графический дизайн",
+          "3D-анимация",
+          "UX/UI дизайн",
+          "ArchiCAD",
+          "Геймдизайн",
+          "Adobe After Effects"
+        ]
+      },
+      {
+        title: "Программирование",
+        icon: "Game.svg",
+        isActive: false,
+        topics: [
+          "Web-разработка",
+          "DevOps",
+          "JavaScript-разработка",
+          "ReactJS",
+          "Мобильная разработка",
+          "GIT",
+          "Системное администрирование",
+          "Верстка на HTML/CSS",
+          "Unity"
+        ]
+      },
+      {
+        title: "Менеджмент",
+        icon: "Profile.svg",
+        isActive: false,
+        topics: [
+          "Product-менеджмент",
+          "Личностный рост",
+          "Управление разработкой и IT",
+          "AGILE",
+          "Бренд-менеджмент",
+          "Запуск стартапов",
+          "Финансовая аналитика",
+          "Бухгалтерия",
+          "Управление в SMM",
+          "IT-рекрутмент"
+        ]
+      },
+      {
+        title: "Аналитика",
+        icon: "Activity.svg",
+        isActive: false,
+        topics: [
+          "Data Science",
+          "Продуктовая аналитика",
+          "Web-аналитика",
+          "Системная аналитика",
+          "Бизнес-аналитика",
+          "Аналитика на R",
+          "Работа с Excel и Google таблицами",
+          "Машинное обучение",
+          "Нейронные сети"
+        ]
+      },
+      {
+        title: "Маркетинг",
+        icon: "Graph.svg",
+        isActive: false,
+        topics: [
+          "Web-аналитика",
+          "SMM-продвижение",
+          "Интернет-маркетинг",
+          "PR-менеджмент",
+          "SEO-продвижение",
+          "Копирайтинг",
+          "Контент-маркетинг",
+          "SERM и репутация",
+          "Маркетинговая аналитика",
+          "Google Ads"
+        ]
+      },
+      {
+        title: "Финансы",
+        icon: "Wallet.svg",
+        isActive: false,
+        topics: [
+          "Web-аналитика",
+          "SMM-продвижение",
+          "Интернет-маркетинг",
+          "PR-менеджмент",
+          "SEO-продвижение",
+          "Копирайтинг",
+          "Контент-маркетинг",
+          "SERM и репутация",
+          "Маркетинговая аналитика",
+          "Google Ads"
+        ]
+      }
+    ]
+
+  section.directions(class=directionsMods)
+    .directions__container
+      h2.directions__title Выбери направление
+      .directions__list
+        each direction, index in directionsList
+          - const cardClass = `directions__item--${index + 1}`
+          - const activeClass = direction.isActive ? 'is-active' : ''
+          a.directions__item(href="#", class=`${cardClass} ${activeClass}`)
+            .directions__item-header
+              .directions__item-icon
+                img(src=`img/icons/direction_icons/${direction.icon}`, alt="")
+              h3.directions__item-title= direction.title
+            .directions__item-topics
+              - let i = 0
+              - let lineIndex = 1
+              - let deferredTopic = null
+              while i < direction.topics.length || deferredTopic
+                - const lineClass = lineIndex <= 5 ? `direction__text-line--${lineIndex}` : 'direction__text-line--5'
+                - const currentTopic = deferredTopic || direction.topics[i]
+                - deferredTopic = null
+                - const hasNext = i + 1 < direction.topics.length
+                - const totalLength = hasNext ? currentTopic.length + direction.topics[i + 1].length : currentTopic.length
+                - const shouldSplit = hasNext && totalLength > 36
+                - const firstIsLarger = hasNext && currentTopic.length >= direction.topics[i + 1].length
+                .direction__text-line(class=lineClass)
+                  if shouldSplit
+                    if firstIsLarger
+                      p.directions__item-topic= currentTopic
+                      - i += 1
+                    else
+                      p.directions__item-topic= direction.topics[i + 1]
+                      - deferredTopic = currentTopic
+                      - i += 2
+                  else
+                    p.directions__item-topic= currentTopic
+                    if hasNext
+                      svg.directions__item-separator(xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none")
+                        path(d="M7.77778 0L9.87848 5.67707L15.5556 7.77778L9.87848 9.87848L7.77778 15.5556L5.67707 9.87848L0 7.77778L5.67707 5.67707L7.77778 0Z" fill="currentColor")
+                      p.directions__item-topic= direction.topics[i + 1]
+                    - i += hasNext ? 2 : 1
+                - lineIndex++

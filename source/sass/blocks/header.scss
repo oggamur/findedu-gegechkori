@@ -81,9 +81,27 @@
     flex-direction: row;
     align-items: center;
     gap: 0;
+    padding: 8px 12px;
+    margin: -8px -12px;
+
+    img {
+      margin-right: 48px;
+      transition: filter $trans-default;
+    }
 
     &:has(.is-active) {
       span.header__nav-bottom-link.is-active {
+        color: #486DD8;
+      }
+
+      img {
+        margin-right: 48px;
+        filter: brightness(0) saturate(100%) invert(37%) sepia(90%) saturate(2000%) hue-rotate(210deg) brightness(0.9) contrast(1.1);
+      }
+    }
+
+    @include hover-focus {
+      .header__nav-bottom-link-text {
         color: #486DD8;
       }
 
@@ -118,16 +136,6 @@
 
     &.is-active {
       color: #486DD8;
-    }
-
-    @include hover-focus {
-      .header__nav-bottom-link-text {
-        color: #486DD8;
-      }
-
-      img {
-        filter: brightness(0) saturate(100%) invert(37%) sepia(90%) saturate(2000%) hue-rotate(210deg) brightness(0.9) contrast(1.1);
-      }
     }
   }
 
