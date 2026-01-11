@@ -1,0 +1,285 @@
+.benefits {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #FAFAFA;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 1;
+  }
+
+  &__info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  &__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 81px 108px 94px 65px;
+    border-radius: 72px;
+    background: #FFF;
+    box-shadow: 0 4px 20px 0 rgba(134, 134, 134, 0.01);
+
+    h3{
+      color: #302828;
+      text-align: center;
+      font-family: Inter;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: normal;
+      margin: 0 38px 20px 76px;
+    }
+
+
+    .info-left{
+
+      img{
+        margin-bottom: 71px;
+        transition: margin-bottom 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        opacity: 1;
+        transform: translateY(0);
+
+        &.compact{
+          margin-bottom: 18px;
+        }
+
+        &.fade-out{
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+      }
+
+      .text-container{
+        display: flex;
+        flex-direction: column;
+        margin-left: 23px;
+        gap: 14px;
+
+        h4{
+          margin: 0;
+          color: #486DD8;
+          text-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+          font-family: Inter;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+          opacity: 1;
+          transform: translateY(0);
+
+          &.fade-out{
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+        }
+
+        p{
+          margin: 0;
+          max-width: 338px;
+          color: #252830;
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 26px;
+        }
+      }
+    }
+
+    .info-right{
+      display: flex;
+      flex-direction: column;
+      gap: 47px;
+      padding-top: 120px;
+      width: 630px;
+      flex-shrink: 0;
+
+
+      .info-benefit{
+        display: flex;
+        flex-direction: row;
+        padding: 23px 105px 27px 27px;
+        gap: 23px;
+        width: 630px;
+        border-radius: 30px;
+        background: #FAFAFA;
+        box-shadow: 0 3px 31px 0 rgba(112, 144, 176, 0.02);
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        // Hover состояние
+        &:hover {
+          background: #DDE6FF;
+
+          .info-benefit__icon {
+            background: #EDF2FF;
+            border-color: transparent;
+
+            svg path:not([stroke]) {
+              fill: #839DFB;
+            }
+
+            svg path[stroke] {
+              fill: none;
+              stroke: #839DFB;
+            }
+          }
+
+          .info-benefit__text {
+            h5 {
+              color: #181515;
+            }
+
+            p {
+              color: #747474;
+            }
+          }
+        }
+
+        // Активное состояние (когда кликнули)
+        &.active {
+          background: #486DD8;
+
+          .info-benefit__icon {
+            background: #567AE4;
+            border-color: transparent;
+
+            svg path:not([stroke]) {
+              fill: white;
+            }
+
+            svg path[stroke] {
+              fill: none;
+              stroke: white;
+            }
+          }
+
+          .info-benefit__text {
+            h5 {
+              color: #FFF;
+            }
+
+            p {
+              color: #97B2FE;
+            }
+          }
+
+          // Активное состояние должно сохраняться даже при hover
+          &:hover {
+            background: #486DD8;
+
+            .info-benefit__icon {
+              background: #567AE4;
+              border-color: transparent;
+
+              svg path:not([stroke]) {
+                fill: white;
+              }
+
+              svg path[stroke] {
+                fill: none;
+                stroke: white;
+              }
+            }
+
+            .info-benefit__text {
+              h5 {
+                color: #FFF;
+              }
+
+              p {
+                color: #97B2FE;
+              }
+            }
+          }
+        }
+      }
+
+      .info-benefit__icon{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        height: fit-content;
+        padding: 14px 11px 14px 18px;
+        border-radius: 20px;
+        background: #F8F7FC;
+        border: 1px solid #F0F0F0;
+        flex-shrink: 0;
+        transition: background 0.3s ease, border-color 0.3s ease;
+
+        svg {
+          display: block;
+          width: 26px;
+          height: 26px;
+          flex-shrink: 0;
+          transform: translate(-2px, -1px);
+
+          path:not([stroke]) {
+            fill: #655BD5;
+            transition: fill 0.3s ease;
+          }
+
+          path[stroke] {
+            fill: none;
+            stroke: #655BD5;
+            transition: stroke 0.3s ease;
+          }
+        }
+      }
+
+      .graphic {
+        padding: 18px 14px 14px 18px;
+      }
+
+      .medal {
+        padding: 18px 14px 14px 18px;
+      }
+
+      .info-benefit__text{
+        transition: opacity 0.3s ease;
+
+        &.fade-out{
+          opacity: 0;
+        }
+
+        h5{
+          color: #181515;
+          font-family: Inter;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 40px;
+          margin-bottom: 4px;
+          transition: color 0.3s ease;
+        }
+
+        p{
+          color: #747474;
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 25px;
+          transition: color 0.3s ease;
+        }
+      }
+
+    }
+  }
+}
